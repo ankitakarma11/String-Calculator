@@ -28,7 +28,7 @@ class StringCalculator
   private
 
   def self.fetch_delimiter(numbers)
-    delimiter = /[,]/
+    delimiter = /[,\n]/
     if numbers.start_with?("//")
       delimiter = numbers[2]
       numbers = numbers[4..-1]
