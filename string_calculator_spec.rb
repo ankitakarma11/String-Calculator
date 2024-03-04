@@ -30,4 +30,10 @@ describe StringCalculator do
       expect(StringCalculator.add("//;\n3;6")).to eq(9)
     end
   end
+
+  context "when given new lines between numbers" do
+    it "returns the sum of the numbers" do
+      expect(StringCalculator.add("1\n5,2")).to eq(8)
+    end
+  end
 end
