@@ -5,7 +5,9 @@ class StringCalculator
 
     return sum if numbers.empty?
 
-    numbers = numbers.split(",")
+    delimiter = fetch_delimiter(numbers)
+    numbers = numbers.split(delimiter)
+   
     numbers.each do |num|
       num = num.to_i
       if num.negative?
@@ -21,4 +23,18 @@ class StringCalculator
       return sum
     end
   end
+
+
+  private
+
+  def self.fetch_delimiter(numbers)
+    delimiter = /[,]/
+    if numbers.start_with?("//")
+      delimiter = numbers[2]
+      numbers = numbers[4..-1]
+    end
+    delimiter
+  end
+
 end
+
