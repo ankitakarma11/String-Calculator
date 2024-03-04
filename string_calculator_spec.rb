@@ -18,4 +18,10 @@ describe StringCalculator do
       expect(StringCalculator.add("3, 2")).to eq(5)
     end
   end
+
+  context "when given negative numbers" do
+    it "raises an exception with the negative numbers" do
+      expect { StringCalculator.add("7,-5,-6") }.to raise_error("Negative numbers not allowed: -5,-6")
+    end
+  end
 end
