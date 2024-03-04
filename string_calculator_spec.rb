@@ -24,4 +24,10 @@ describe StringCalculator do
       expect { StringCalculator.add("7,-5,-6") }.to raise_error("Negative numbers not allowed: -5,-6")
     end
   end
+
+  context "when changing delimiter" do
+    it "returns the sum of the numbers" do
+      expect(StringCalculator.add("//;\n3;6")).to eq(9)
+    end
+  end
 end
